@@ -1,4 +1,15 @@
 # The worker image is pre-built and shared by the trainer.
+api:
+  image:
+    repository: shipwave-api
+    tag: "1.0"
+  service:
+    type: ClusterIP
+    port: 80
+  containerPort: 8000
+  env:
+    apiKey: test-key
+
 worker:
   image:
     repository: eylabacr31b021.azurecr.io/shared/shipwave-worker

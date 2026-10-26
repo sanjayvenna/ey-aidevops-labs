@@ -6,4 +6,5 @@ COPY . .
 RUN useradd -u 10001 appuser
 USER 10001
 EXPOSE 8000
+ENV PYTHONUNBUFFERED=1
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
